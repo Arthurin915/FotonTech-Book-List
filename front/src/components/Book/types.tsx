@@ -1,12 +1,4 @@
-export interface IBook {
-  id: string;
-  title: string;
-  subtitle: string;
-  author: string;
-  description: string;
-  pageCount: number;
-  bookCover: string;
-}
+import { IBook } from "../../models/books";
 
 export interface BookProps {
   book: IBook;

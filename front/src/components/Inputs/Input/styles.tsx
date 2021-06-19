@@ -1,5 +1,24 @@
 import styled, { css } from "styled-components";
 import SvgIcon from "../../SvgIcon";
+import { ErrorProps } from "./types";
+
+export const InputStyle = css<ErrorProps>`
+  ${({ theme: { colors }, hasError }) => css`
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    color: ${colors.black};
+    outline: none;
+    border: ${hasError ? `1px solid ${colors.lightRed}` : "none"};
+
+    &::placeholder {
+      color: ${colors.darkGray};
+    }
+    border-radius: 1rem;
+    box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.4926);
+  `};
+`;
+
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -17,20 +36,7 @@ export const InputBoxContainer = styled.div`
 `;
 
 export const InputBox = styled.input`
-  ${({ theme: { colors } }) => css`
-    padding: 1.5rem;
-    font-size: 1.6rem;
-    line-height: 1.8rem;
-    color: ${colors.black};
-    outline: none;
-    border: none;
-
-    &::placeholder {
-      color: ${colors.darkGray};
-    }
-    border-radius: 1rem;
-    box-shadow: 5px 5px 80px rgba(212, 173, 134, 0.4926);
-  `};
+  ${InputStyle};
 `;
 
 export const InputIcon = styled(SvgIcon)`

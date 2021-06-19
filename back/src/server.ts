@@ -1,6 +1,7 @@
-require('dotenv').config()
-import server from './server'
+import app from './app';
 
-server.listen(process.env.PORT, () => {
+require('dotenv').config()
+
+app.listen(process.env.PORT, () => {
     console.log('Server running at port:', process.env.PORT)
-})
+});

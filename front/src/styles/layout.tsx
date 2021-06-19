@@ -19,6 +19,9 @@ const globalLayouts = css`
     background-color: ${({ theme: { colors } }) => colors.whiteBg};
     width: 37.5rem;
     position: relative;
+    div#root {
+      height: inherit;
+    }
   }
 
   input,
@@ -38,6 +41,7 @@ const globalLayouts = css`
     font-weight: 400;
     font-size: 1.4rem;
     line-height: 2.5rem;
+    letter-spacing: 0.02rem;
     color: ${({ theme: { colors } }) => colors.black2};
   }
 
@@ -57,11 +61,11 @@ const globalLayouts = css`
     font-weight: 600;
     font-size: 2.4rem;
     line-height: 2.9rem;
-    text-transform: uppercase;
     outline: none;
   }
   a {
     text-decoration: none;
+    color: inherit;
     &:visited {
       color: currentColor;
     }

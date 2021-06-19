@@ -8,6 +8,7 @@ export interface IColors {
   black2: string;
   black3: string;
   black4: string;
+  black5: string;
   bluishBlack: string;
   lightRed: string;
   gray1: string;
@@ -26,6 +27,7 @@ const Colors = {
   black2: "rgba(49, 49, 49, 0.6)",
   black3: "#3F4043",
   black4: "#313131",
+  black5: "rgba(151, 151, 151, 0.2)",
   bluishBlack: "#36383A",
   lightRed: "#FF6978",
   gray1: "#BFBEBF",

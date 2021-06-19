@@ -1,15 +1,15 @@
-import React from 'react'
-import { BookAuthor, BookImage, BookTitle, BookContainer } from './styles'
-import { BookProps } from './types'
+import React from "react";
+import { BookAuthor, BookImage, BookTitle, BookContainer } from "./styles";
+import { BookProps } from "./types";
 
-const Book: React.FC<BookProps> = ({book: {bookImg, bookAuthor, bookTitle}}) => {
-    return (
-        <BookContainer>
-            <BookImage src={bookImg}/>
-            <BookTitle>{bookTitle}</BookTitle>
-            <BookAuthor>{bookAuthor}</BookAuthor>
-        </BookContainer>
-    )
-}
+const Book: React.FC<BookProps> = ({ book: { bookCover, author, title } }) => {
+  return (
+    <BookContainer>
+      <BookImage src={`data:image/png;base64, ${bookCover}`} />
+      <BookTitle>{title}</BookTitle>
+      <BookAuthor>{author}</BookAuthor>
+    </BookContainer>
+  );
+};
 
-export default Book
+export default Book;

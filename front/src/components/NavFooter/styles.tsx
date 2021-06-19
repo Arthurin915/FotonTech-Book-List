@@ -1,19 +1,9 @@
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import SvgIcon from "../SvgIcon";
-import { Link } from "react-router-dom";
-import { StyledNavLinkProps } from "./types";
 
 export const NavLinkIcon = styled(SvgIcon)``;
 export const NavLinkText = styled.span``;
-
-const IsActiveStyle = css<StyledNavLinkProps>`
-  ${({ theme: { colors }, isLinkActive }) => css`
-    span, svg {
-      color: ${isLinkActive ? colors.black4 : colors.gray1};
-    }
-    
-  `}
-`;
 
 export const NavFooterContainer = styled.div`
   ${({ theme: { colors } }) => css`
@@ -35,6 +25,18 @@ export const NavFooterContainer = styled.div`
   `};
 `;
 
-export const NavLink = styled(Link)<StyledNavLinkProps>`
-  ${IsActiveStyle}
+export const NavLink = styled(Link)`
+  ${({ theme: { colors } }) => css`
+    span,
+    svg {
+      color: ${colors.gray1};
+    }
+
+    &.active-link {
+      span,
+      svg {
+        color: ${colors.black4};
+      }
+    }
+  `};
 `;
